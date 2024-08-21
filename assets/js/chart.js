@@ -10,8 +10,8 @@ const barChart = new Chart(document.getElementById('barChart'), {
         datasets: [{
             label: 'Vote Count',
             data: voteCounts,
-            backgroundColor: 'rgba(54, 162, 235, 0.6)',
-            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: '#dc3545',
+            borderColor: 'green',
             borderWidth: 1
         }]
     },
