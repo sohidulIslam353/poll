@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POLLS SURVEY</title>
+    <link rel="stylesheet" href="assets/css/fontawsome.min.css" />
+    <link rel="stylesheet" href="assets/fonts/icofont.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/custome.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css">
+     <style>
+        :root {
+            --main-color: #198754;
+            --second-color: #dc3545;
+        }
+        .chose-category {
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    text-align: center; /* Center the text inside */
+}
+
+.section-title p {
+    font-size: 1.0rem;
+    font-weight: bold;
+
+}
+
+.chose-category-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px; /* Ensures the form is not too wide */
+}
+
+.btn-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the buttons */
+    margin-top: 20px;
+}
+
+.btn.yes, .btn.no {
+    width:200px; /* Make the button square */
+    height: 100px;
+    border: 2px solid; /* Thin border */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 20px; /* Increase font size for readability */
+    font-weight: bold; /* Make the text bold */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add a hover effect */
+}
+
+.btn.yes {
+    /* Bootstrap success color */
+    border-color: #28a745;
+}
+
+.btn.no {
+    background-color: #dc3545; /* Bootstrap danger color */
+    border-color: #dc3545;
+}
+
+.btn.yes:hover, .btn.no:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+.progress-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.progress {
+    height: 30px;
+    background-color: #e9ecef;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+.vote-count {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.vote-count span {
+    margin-right: 10px;
+}
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+.text-main-color {
+    color: #007bff; /* Change this to your primary color */
+}
+
+.poll-list {
+    padding: 0;
+    margin: 0;
+}
+
+.list-group-item {
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.list-group-item:hover {
+    background: #e9ecef;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.poll-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.poll-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <!-- Header -->
+        <nav class="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="header-menu-logo">
+                            <div class="logo">
+                                <a href="">
+                                    <img src="assets/img/logo.png" alt="Logo" />
+                                </a>
+                            </div>
+                            <div class="menu">
+                                <ul class="nav-list">
+                                <!--    <li class="nav-link">
+                                        <a href="/">Home</a>
+                                    </li>  -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="company-btn">
+                            <button class="header-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Log
+                                In</button>
+                            <button class="header-btn" data-bs-toggle="modal" data-bs-target="#register">Sign
+                                Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- =============mobile menu ============= -->
+        <div class="mobile-menu">
+            <div class="mobile-logo">
+                <img src="assets/img/logo.png" alt="Image not found">
+            </div>
+            <div class="mobile-list">
+                <div class="hambarger-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <div class="mobile-hemberger-menu">
+                    <ul class="mobile-list">
+                        <!-- <li class="mobile-li"><a href="/" class="mobile-link">Home</a></li> -->
+                        <li class="mobile-li"><a href="" class="header-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"> Log In</a></li>
+                        <li class="mobile-li"><a href="" class="header-btn" data-bs-toggle="modal" data-bs-target="#register"> Sign  Up</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Header end  -->
+        <!-- Hero Area   -->
+        <section>
+            <div class="hero">
+                <div class="container">
+                    <div class="">
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-md-5">
+                                <div class="hero-left">
+                                    <div class="hero-logo">
+                                        <h4 >Do you think Bangladesh host the ICC women world cup 2024 ?</h4>
+                                        <small>Watch this video and give your opinion.</small>
+                                    </div>
+                                    <div class="video-area">
+                                        <div class="video-wrapper more-radious-30">
+                                            <img src="assets/img/inner/1.png" alt="image not found" />
+                                            <div class="play-btn">
+                                                <button id="cust_btn" class="play-button" data-bs-toggle="modal" data-bs-target="#video">
+                                                <img src="assets/img/icon/play.svg" alt="" />
+                                            </button>
+                                            </div>
+                                        </div>
+                                        <div class="video-under-btn-area second-colorable ">
+                                            <a href="" class="video-btn-a bg-success">
+                                            9,388 <br />
+                                            Yes</a>
+                                            <a href="" class="video-btn-b bg-warning">12 <br />
+                                            Neutral</a>
+                                            <a href="" class="video-btn-c bg-danger">290 <br />
+                                            No</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----Chose category -------- -->
+        <section>
+            <div class="chose-category cpy-5 pb-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title">
+                            <p>CHOOSE YOUR LOCATION</p>
+                        </div>
+                    </div>
+
+                    <div class="chose-category-wrapper">
+                        <div class="card p-4 col-lg-4">
+                            <form>
+                              <fieldset class="">
+                                <div class="mb-3">
+                                  <select class="form-select">
+                                    <option>Select Your city</option>
+                                  </select>
+                                </div>
+                                <div class="mb-3">
+                                  <select  class="form-select">
+                                    <option>Select Location</option>
+                                  </select>
+                                </div>
+                              </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+             <div class="row mt-4">
+                <div class="section-title">
+                    <h5>
+                      VOTE  YES OR
+                        <span class="text-main-color">NO</span>
+                    </h5>
+                    <div class="btn-list">
+                        <button class="btn btn-success yes">YES </button>
+                        <button class="btn btn-danger no">NO </button>
+                    </div> 
+                </div>
+
+            </div>
+            <h5 class="section-title mt-4">
+               Live result of voting
+            </h5>
+             <div class="progress-wrapper mt-4">
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" id="yes-bar">50%</div>
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" id="no-bar">50%</div>
+                    </div>
+                    <div class="vote-count mt-2">
+                        <span id="yes-count">YES: 50</span>
+                        <span id="no-count" class="ml-3">NO: 50</span>
+                    </div>
+                </div>
+        </section>
+
+         <section>
+            <div class="testimonial cpt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title">
+                            <h2>
+                                POLL
+                                <span class="text-main-color"> CHART</span>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h3 class="text-center">Vote Count by District</h3>
+                                <canvas id="barChart"></canvas>
+                            </div>
+                            <div class="col-lg-6">
+                                <h3 class="text-center">Vote Distribution</h3>
+                                <canvas id="pieChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </section>
+
+     <section>
+    <div class="testimonial cpt-5">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2>
+                        POLL
+                        <span class="text-main-color"> ARCHIVE</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <div class="row">
+                    <!-- News Title List -->
+                    <div class="col-12">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="#" style="font-weight: bold; font-size:18px;">1. Poll Result: Should we increase public spending on education?</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" style="font-weight: bold; font-size:18px;">2. Poll Archive: Public opinion on climate change actions</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" style="font-weight: bold; font-size:18px;">3. Poll Result: Is the new tax policy favorable?</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" style="font-weight: bold; font-size:18px;">4. Poll Archive: Which is the most important issue facing the country?</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" style="font-weight: bold; font-size:18px;">5. Poll Result: Should the government invest more in renewable energy?</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        <!-- Testimonial  -->
+        <section>
+            <div class="testimonial cpt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title">
+                            <h4 class="text-main-color">TESTIMONIAL</h4>
+                            <h2>
+                                WHAT A PEOPLE SAY
+                                <span class="text-main-color">ABOUT US</span>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slider mt-3">
+                        <div class="swiper mySwiper testimonial_slider">
+                            <div class="swiper-wrapper testimonial-swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="testi-item fl-wrap">
+                                        <div class="testi-avatar"><img src="assets/img/testimonial/1.jpg" alt=""></div>
+                                        <div class="testimonilas-text fl-wrap">
+
+                                            <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. "</p>
+
+                                            <div class="testimonilas-avatar fl-wrap">
+                                                <h3>Linda Svensky</h3>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testi-item fl-wrap">
+                                        <div class="testi-avatar"><img src="assets/img/testimonial/1.jpg" alt=""></div>
+                                        <div class="testimonilas-text fl-wrap">
+
+                                            <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. "</p>
+
+                                            <div class="testimonilas-avatar fl-wrap">
+                                                <h3>Linda Svensky</h3>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testi-item fl-wrap">
+                                        <div class="testi-avatar"><img src="assets/img/testimonial/1.jpg" alt=""></div>
+                                        <div class="testimonilas-text fl-wrap">
+
+                                            <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. "</p>
+
+                                            <div class="testimonilas-avatar fl-wrap">
+                                                <h3>Linda Svensky</h3>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testi-item fl-wrap">
+                                        <div class="testi-avatar"><img src="assets/img/testimonial/1.jpg" alt=""></div>
+                                        <div class="testimonilas-text fl-wrap">
+
+                                            <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. "</p>
+
+                                            <div class="testimonilas-avatar fl-wrap">
+                                                <h3>Linda Svensky</h3>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-nav">
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial  -->
+        <!-- Footer  -->
+        <section>
+            <footer>
+                <div class="footer cpt-5">
+                   
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="logo-area">
+                                    <a href="" class="logo">
+                                        <img src="assets/img/footer-logo.png" alt="" />
+                                    </a>
+                                </div>
+
+                                <div class="address">
+                                    <p>
+                                        Cras eu varius libero. Vestibulum nisl enim, vehicula vel convallis at, gravida vel augue. Vestibulum ante
+                                    </p>
+                                </div>
+
+                                <div class="addres">
+                                    <p>
+                                        <i class="icofont-mass-mail"></i><span>Mail :</span><a href="tel:0123456789">yourmail@domain.com</a>
+                                    </p>
+                                    <p>
+                                        <i class="icofont-location"></i><span> Address :</span> <a href="mailto: 0123456789"> USA 27TH Brooklyn NY</a>
+                                    </p>
+                                    <p>
+                                        <i class="icofont-phone"></i> <span> Phone :</span> <a href="mailto: 0123456789">
+                                        +7(111)123456789</a>
+                                    </p>
+                                </div>
+
+                                <div class="footer-social">
+                                    <p>Find us on:</p>
+                                    <ul class="social-ul">
+                                        <li>
+                                            <a href=""><img src="assets/img/icon/facebook.svg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><img src="assets/img/icon/in.svg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><img src="assets/img/icon/tw.svg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><img src="assets/img/icon/pin.svg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><img src="assets/img/icon/notknow.svg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><img src="assets/img/icon/digg.svg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><img src="assets/img/icon/discord.svg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><img src="assets/img/icon/ins.svg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><img src="assets/img/icon/youtube.svg" alt=""></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="footer-menu">
+                                    <h2 class=" footer-menu-title">Our Last News</h2>
+                                    <ul class="footer-menu-list">
+                                        <li>
+                                            <div class="blog-sm-thamble">
+                                                <img src="assets/img/blog/1.jpg" alt="">
+                                                <div class="blog-sm-title-date">
+                                                    <a href="" class="sm-title">Our Last News</a>
+                                                    <p class="date"><i class="icofont-calendar"></i> 21 Mar 09.05 </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="blog-sm-thamble">
+                                                <img src="assets/img/blog/2.jpg" alt="">
+                                                <div class="blog-sm-title-date">
+                                                    <a href="" class="sm-title">Our Last News</a>
+                                                    <p class="date"><i class="icofont-calendar"></i> 21 Mar 09.05 </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="blog-sm-thamble">
+                                                <img src="assets/img/blog/3.jpg" alt="">
+                                                <div class="blog-sm-title-date">
+                                                    <a href="" class="sm-title">Our Last News</a>
+                                                    <p class="date"><i class="icofont-calendar"></i> 21 Mar 09.05 </p>
+                                                </div>
+                                            </div>
+                                        </li>
+
+
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-xl-4">
+                                <div class="footer-menu">
+                                    <h2 class=" footer-menu-title">Helpful links</h2>
+                                    <ul class="footer-menu-link">
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">About
+                                            Our Company</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">Our
+                                            last News</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">Pricing Plans</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">Help
+                                            Center</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">About
+                                            Our Company</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">Our
+                                            last News</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">Pricing Plans</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">Help
+                                            Center</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">About
+                                            Our Company</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">Our
+                                            last News</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">Pricing Plans</a>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-angle-double-right"></i> <a href="" class="footer-link">Help
+                                            Center</a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="mobile-app">
+                                        <div class="button-wrapper">
+                                            <a href="#" class=" down-btn color3-bg fl-wrap"><i class="fab fa-apple"></i> <span>Apple
+                                        Store</span> </a>
+                                        </div>
+
+                                        <div class="button-wrapper">
+
+                                            <a href="#" class=" down-btn color3-bg fl-wrap"><i class="fab fa-android"></i>
+                                       <span> Google Play</span> </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="copy-section">
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <div class="copyright">
+                                        <p> &copy; 2023 BDGOL, Inc. All rights reserved</p>
+
+                                        <ul class="footer-another-page">
+                                            <li><a href="">Terms of use</a></li>
+                                            <li><a href="">Privacy Policy</a></li>
+                                            <li><a href="">Blog</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </div>
+
+
+
+    <!-- Login model  -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content pb-5">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Welcome to BDGOL.</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class=" mb-3">
+                            <label for="">Username or Email Address *</label>
+                            <input type="text" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="mb-1">
+                            <label for="">Password *</label>
+
+                            <!-- <span class="input-group-text" id="basic-addon1"><i class="icofont-lock"></i></span> -->
+                            <input type="password" class="form-control" placeholder="Password">
+
+                        </div>
+                        <button class="forgot-pass">Forgot Password</button>
+
+                        <div class="mb-3">
+                            <label class="checkbox-container">Remember me?
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+
+
+                        <div class="text-center mt-3">
+
+                            <button type="submit" class="custom-btn w-100">Login</button>
+                            <a href="#" class="change-model">Don't have an account?</a>
+                        </div>
+
+                    </form>
+                    <div class="log-separator fl-wrap"><span>or</span></div>
+                    <div class="soc-log fl-wrap">
+                        <p>For faster login or register use your social account.</p>
+                        <a href="#" class="facebook-log"> Facebook</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Login model end  -->
+
+    <!-- Register model  -->
+    <div class="modal fade" id="register" tabindex="-1" aria-labelledby="registerLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content pb-5">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="registerLabel">Register</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class=" mb-3">
+                            <label for="">Full Name *</label>
+                            <input type="text" class="form-control" placeholder="Full Name">
+                        </div>
+                        <div class="mb-1">
+                            <label for="">Email Address *</label>
+
+                            <input type="email" class="form-control" placeholder="Email Address ">
+
+                        </div>
+                        <div class="mb-1">
+                            <label for="">Password *</label>
+
+                            <input type="password" class="form-control" placeholder="Password  ">
+
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="checkbox-container">I agree to the <a href=""> Privacy Policy</a>
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="checkbox-container">I agree to the <a href="">Terms and Conditions</a>
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+
+
+                        <div class="text-center mt-3">
+
+                            <button type="submit" class="custom-btn w-100">Register</button>
+                            <a href="#" class="change-model">For faster login or register use your social account.
+
+                            </a>
+                        </div>
+
+                    </form>
+                    <div class="log-separator fl-wrap"><span>or</span></div>
+                    <div class="soc-log fl-wrap">
+                        <a href="#" class="facebook-log"> Facebook</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Register model end  -->
+
+
+    <!-- Video  model  -->
+    <div class="modal fade" id="video" tabindex="-1" aria-labelledby="videoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="video-model-close">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body">
+
+                    <iframe width="100%" height="400" class="video-popup" src="https://www.youtube.com/embed/c1XNqw2gSbU" title="Water Aerial Videos - DroneBase | Shutterstock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Video model end  -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+     <script src="assets/js/swiper-bundle.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/chart.js"></script>
+
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
