@@ -125,3 +125,42 @@ canvas {
     color: #007bff;
     text-decoration: underline;
 }
+
+.form-select {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and focus effects */
+.form-select:hover, 
+.form-select:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.form-select::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border: 2px solid #007bff;
+    transition: width 0.3s ease;
+}
+
+.form-select:hover::after, 
+.form-select:focus::after {
+    width: 100%;
+}
