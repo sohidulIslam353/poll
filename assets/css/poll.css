@@ -1,0 +1,127 @@
+   .chose-category {
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    text-align: center; /* Center the text inside */
+}
+
+.section-title p {
+    font-size: 1.0rem;
+    font-weight: bold;
+
+}
+
+.chose-category-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px; /* Ensures the form is not too wide */
+}
+
+.btn-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the buttons */
+    margin-top: 20px;
+}
+
+.btn.yes, .btn.no {
+    width:200px; /* Make the button square */
+    height: 100px;
+    border: 2px solid; /* Thin border */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 20px; /* Increase font size for readability */
+    font-weight: bold; /* Make the text bold */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add a hover effect */
+}
+
+.btn.yes {
+    /* Bootstrap success color */
+    border-color: #28a745;
+}
+
+.btn.no {
+    background-color: #dc3545; /* Bootstrap danger color */
+    border-color: #dc3545;
+}
+
+.btn.yes:hover, .btn.no:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+.progress-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.progress {
+    height: 30px;
+    background-color: #e9ecef;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+.vote-count {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.vote-count span {
+    margin-right: 10px;
+}
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+.text-main-color {
+    color: #007bff; /* Change this to your primary color */
+}
+
+.poll-list {
+    padding: 0;
+    margin: 0;
+}
+
+.list-group-item {
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.list-group-item:hover {
+    background: #e9ecef;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.poll-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.poll-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
